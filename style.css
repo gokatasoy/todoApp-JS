@@ -13,6 +13,19 @@ body{
 }
 
 .grid{
-    text-align: center;
+    /* text-align: center; */
     padding: 30px;
+}
+
+.grid .card-header{ 
+    font-size: 30px;
+}
+
+.grid .card-body{ 
+    font-size: 25px;
+}
+
+.checked{
+    text-decoration: line-through;
+    background-color: grey;
 }
