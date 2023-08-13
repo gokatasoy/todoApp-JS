@@ -20,22 +20,18 @@
             <div class="bg-info p-2">
                 <h1 class="p-2 text-center">TODO App</h1>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Add task...">
+                    <input type="text" class="form-control" id="todo_input" placeholder="Add task...">
                     <div class="input-group-append">
-                        <button class="btn btn-success addBtn" type="button">Add</button>
+                        <button class="btn btn-success" type="button" id="add_btn">Add</button>
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">Laundry 
-                        <span><button class="btn btn-danger">Delete</button></span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">Wash the dishes 
-                        <span><button class="btn btn-danger">Delete</button></span>
-                    </li>
-                    <li class="list-group-item checked d-flex justify-content-between align-items-center">Code your project 
-                        <span><button class="btn btn-danger">Delete</button></span>
+                <ul class="todo_list_" id="todo_list">
+                    <li class="todo_item_" id="todo_item">
+                        <button class="complete_button" id="complete_button">Complete</button>
+                        <button class="delete_button" id="delete_button">Delete</button>
+                        <p id="todo_text">Wash the dishes</p>
                     </li>
                 </ul>
             </div>

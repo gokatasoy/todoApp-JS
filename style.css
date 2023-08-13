@@ -25,6 +25,11 @@ body{
     font-size: 25px;
 }
 
+.todo_item_{
+    display: flex;
+    flex-direction: row;
+}
+
 .checked{
     text-decoration: line-through;
     background-color: grey;
