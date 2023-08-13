@@ -1,5 +1,4 @@
 // TODO APP
-
 // 1-) Start
 // 2-) Access the "Add" button, assign to a variable named addBtn
 // 3-) Access the input element, assign to a variable named todoInput
@@ -35,8 +34,6 @@
 // 8-) End
 
 
-
-
 // ADDING TASK TO THE LIST
 let addBtn = document.getElementById("add_btn")
 let todoInput = document.getElementById("todo_input")
@@ -55,6 +52,7 @@ const renderTodoItem = (todoText) => {
     // TEXT
     let textElement = document.createElement("p")
     textElement.innerText= todoText
+    textElement.classList("todo_input")
     todoElement.appendChild(textElement)
 
     // COMPLETE BUTTON
@@ -74,8 +72,12 @@ const renderTodoItem = (todoText) => {
     todoElement.appendChild(buttonContainer)
 
     todoList.appendChild(todoElement)
+    
+    todoInput.value = ""
+    todoInput.focus();
 }
 
+// ADD TASK FUNCTION
 const addTask = () => {
     if (todoInput.value === "") {
         alert("You can not pass an empty input!")
