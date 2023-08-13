@@ -27,11 +27,15 @@
                 </div>
             </div>
             <div class="card-body">
-                <ul class="todo_list_" id="todo_list">
-                    <li class="todo_item_" id="todo_item">
-                        <button class="complete_button" id="complete_button">Complete</button>
-                        <button class="delete_button" id="delete_button">Delete</button>
-                        <p id="todo_text">Wash the dishes</p>
+                <ul class="list-group list-group-flush" id="todo_list">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" id="todo_item">Laundry 
+                        <span><button class="btn btn-delete btn-danger" id="delete">Delete</button></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Wash the dishes 
+                        <span><button class="btn btn-delete btn-danger" onclick="deleteTask()">Delete</button></span>
+                    </li>
+                    <li class="list-group-item checked d-flex justify-content-between align-items-center">Code your project 
+                        <span><button class="btn btn-delete btn-danger"  onclick="deleteTask()">Delete</button></span>
                     </li>
                 </ul>
             </div>
