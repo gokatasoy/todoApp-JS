@@ -52,7 +52,7 @@ const renderTodoItem = (todoText) => {
     // TEXT
     let textElement = document.createElement("p")
     textElement.innerText= todoText
-    textElement.classList("todo_input")
+    textElement.classList.add("todo_input")
     todoElement.appendChild(textElement)
 
     // COMPLETE BUTTON
