@@ -31,14 +31,33 @@
 //    - Else:
 //        - Call the renderTodoItem function with todoInput's value as a parameter
 
-// 8-) Add enter keypress to the 
-// 8-) End
+// 8-) Add enter keypress to the todoInput.
+
+// 9-) Add click event listener to the completeButton
+//    - Code the toggleComplete function and in that function when the button clicked the buttons upper parent element will be assigned with the checked class by that function.
+
+// 10-) End
+
+// 11-) End
+
+// 12-) End
+
+// 13-) End
+
+// 14-) End
+
+// 15-) End
 
 
 // ADDING TASK TO THE LIST
 let addBtn = document.getElementById("add_btn")
 let todoInput = document.getElementById("todo_input")
 let todoList = document.getElementById("todo_list")
+
+// COMPLETED TASK FUNCTION
+const toggleComplete = (event) => {
+    event.currentTarget.parentElement.parentElement.classList.toggle("checked")
+}
 
 const renderTodoItem = (todoText) => {
     // UL ELEMENT
@@ -61,6 +80,7 @@ const renderTodoItem = (todoText) => {
     completeButton.classList.add("btn", "btn-success", "btn-sm", "me-1")
     completeButton.style.width = "80px"
     completeButton.innerText = "Complete"
+    completeButton.addEventListener("click", toggleComplete)
     buttonContainer.appendChild(completeButton)
 
     // DELETE BUTTON
