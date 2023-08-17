@@ -36,27 +36,23 @@
 // 9-) Add click event listener to the completeButton
 //    - Code the toggleComplete function and in that function when the button clicked the buttons upper parent element will be assigned with the checked class by that function.
 
-// 10-) End
+// 10-) Add removeTask function
 
 // 11-) End
-
-// 12-) End
-
-// 13-) End
-
-// 14-) End
-
-// 15-) End
-
 
 // ADDING TASK TO THE LIST
 let addBtn = document.getElementById("add_btn")
 let todoInput = document.getElementById("todo_input")
 let todoList = document.getElementById("todo_list")
 
-// COMPLETED TASK FUNCTION
+// COMPLETE TASK FUNCTION
 const toggleComplete = (event) => {
     event.currentTarget.parentElement.parentElement.classList.toggle("checked")
+}
+
+// REMOVE TASK FUNCTION
+const removeTask = (event) => {
+    todoList.removeChild(event.currentTarget.parentElement.parentElement)
 }
 
 const renderTodoItem = (todoText) => {
@@ -80,7 +76,9 @@ const renderTodoItem = (todoText) => {
     completeButton.classList.add("btn", "btn-success", "btn-sm", "me-1")
     completeButton.style.width = "80px"
     completeButton.innerText = "Complete"
+    
     completeButton.addEventListener("click", toggleComplete)
+
     buttonContainer.appendChild(completeButton)
 
     // DELETE BUTTON
@@ -88,6 +86,9 @@ const renderTodoItem = (todoText) => {
     deleteButton.classList.add("btn", "btn-danger", "btn-sm", "me-1")
     deleteButton.style.width = "80px"
     deleteButton.innerText = "Delete"
+
+    deleteButton.addEventListener("click", removeTask   )
+
     buttonContainer.appendChild(deleteButton)
 
     todoElement.appendChild(buttonContainer)
