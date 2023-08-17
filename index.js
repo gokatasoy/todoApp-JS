@@ -31,6 +31,7 @@
 //    - Else:
 //        - Call the renderTodoItem function with todoInput's value as a parameter
 
+// 8-) Add enter keypress to the 
 // 8-) End
 
 
@@ -51,28 +52,28 @@ const renderTodoItem = (todoText) => {
 
     // TEXT
     let textElement = document.createElement("p")
-    textElement.innerText= todoText
+    textElement.innerText = todoText
     textElement.classList.add("todo_input")
     todoElement.appendChild(textElement)
 
     // COMPLETE BUTTON
     let completeButton = document.createElement("button")
     completeButton.classList.add("btn", "btn-success", "btn-sm", "me-1")
-    completeButton.style.width="80px"
+    completeButton.style.width = "80px"
     completeButton.innerText = "Complete"
     buttonContainer.appendChild(completeButton)
 
     // DELETE BUTTON
     let deleteButton = document.createElement("button")
     deleteButton.classList.add("btn", "btn-danger", "btn-sm", "me-1")
-    deleteButton.style.width="80px"
+    deleteButton.style.width = "80px"
     deleteButton.innerText = "Delete"
     buttonContainer.appendChild(deleteButton)
 
     todoElement.appendChild(buttonContainer)
 
     todoList.appendChild(todoElement)
-    
+
     todoInput.value = ""
     todoInput.focus();
 }
@@ -85,5 +86,12 @@ const addTask = () => {
         renderTodoItem(todoInput.value)
     }
 }
+
+// ADD ENTER KEYPRESS EVENT LISTENER
+todoInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter"){
+        addTask()
+    }
+})
 
 addBtn.addEventListener("click", addTask)
